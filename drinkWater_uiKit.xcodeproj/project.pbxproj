@@ -13,6 +13,7 @@
 		1410E4F62974D8C400067702 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1410E4F42974D8C400067702 /* Main.storyboard */; };
 		1410E4F82974D8C500067702 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1410E4F72974D8C500067702 /* Assets.xcassets */; };
 		1410E4FB2974D8C500067702 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1410E4F92974D8C500067702 /* LaunchScreen.storyboard */; };
+		E41ED9D491C7904FC3FCE46D /* Pods_drinkWater_uiKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 538C5E71A14237B5DB3813C8 /* Pods_drinkWater_uiKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,9 @@
 		1410E4F72974D8C500067702 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1410E4FA2974D8C500067702 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1410E4FC2974D8C500067702 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		52A24B3125ABC3CB8BD1CF40 /* Pods-drinkWater_uiKit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-drinkWater_uiKit.release.xcconfig"; path = "Target Support Files/Pods-drinkWater_uiKit/Pods-drinkWater_uiKit.release.xcconfig"; sourceTree = "<group>"; };
+		538C5E71A14237B5DB3813C8 /* Pods_drinkWater_uiKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_drinkWater_uiKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		81A8B0E992651FFFBD61CEB0 /* Pods-drinkWater_uiKit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-drinkWater_uiKit.debug.xcconfig"; path = "Target Support Files/Pods-drinkWater_uiKit/Pods-drinkWater_uiKit.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +35,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E41ED9D491C7904FC3FCE46D /* Pods_drinkWater_uiKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -42,6 +47,8 @@
 			children = (
 				1410E4ED2974D8C400067702 /* drinkWater_uiKit */,
 				1410E4EC2974D8C400067702 /* Products */,
+				265C463A1D6B8A7E5690345B /* Pods */,
+				275041493DC83E60BFF42ADF /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -67,6 +74,23 @@
 			path = drinkWater_uiKit;
 			sourceTree = "<group>";
 		};
+		265C463A1D6B8A7E5690345B /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				81A8B0E992651FFFBD61CEB0 /* Pods-drinkWater_uiKit.debug.xcconfig */,
+				52A24B3125ABC3CB8BD1CF40 /* Pods-drinkWater_uiKit.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		275041493DC83E60BFF42ADF /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				538C5E71A14237B5DB3813C8 /* Pods_drinkWater_uiKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -74,6 +98,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1410E4FF2974D8C500067702 /* Build configuration list for PBXNativeTarget "drinkWater_uiKit" */;
 			buildPhases = (
+				207ED7BED4A1C2A3897EB73E /* [CP] Check Pods Manifest.lock */,
 				1410E4E72974D8C400067702 /* Sources */,
 				1410E4E82974D8C400067702 /* Frameworks */,
 				1410E4E92974D8C400067702 /* Resources */,
@@ -132,6 +157,31 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		207ED7BED4A1C2A3897EB73E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-drinkWater_uiKit-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		1410E4E72974D8C400067702 /* Sources */ = {
@@ -282,57 +332,69 @@
 		};
 		1410E5002974D8C500067702 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 81A8B0E992651FFFBD61CEB0 /* Pods-drinkWater_uiKit.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 0.0.1;
 				DEVELOPMENT_TEAM = P8F3338MA4;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = drinkWater_uiKit/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Daily Drink Water";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.healthcare-fitness";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 0.0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = "kr.co.haricot.drinkWater-uiKit";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
 		1410E5012974D8C500067702 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 52A24B3125ABC3CB8BD1CF40 /* Pods-drinkWater_uiKit.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 0.0.1;
 				DEVELOPMENT_TEAM = P8F3338MA4;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = drinkWater_uiKit/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Daily Drink Water";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.healthcare-fitness";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 0.0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = "kr.co.haricot.drinkWater-uiKit";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
