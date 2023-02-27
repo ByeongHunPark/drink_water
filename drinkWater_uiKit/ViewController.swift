@@ -53,21 +53,10 @@ class ViewController: UIViewController, UNUserNotificationCenterDelegate {
             reminderLabel.topAnchor.constraint(equalTo: addButton.bottomAnchor, constant: 50)
         ])
         
-        // 알림 설정
-        UNUserNotificationCenter.current().delegate = self
-        
-        let content = UNMutableNotificationContent()
-        content.title = "물을 마시세요!"
-        content.body = "당신의 목은 이미 건조해질 수 있습니다. 지금 물을 마시세요!"
-        content.sound = UNNotificationSound.default
-        
-        // 3600 = 60분 60 = 1분
-        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 3600, repeats: true)
-        
-        let request = UNNotificationRequest(identifier: "waterReminder", content: content, trigger: trigger)
-        UNUserNotificationCenter.current().add(request)
-        
         requestNotificationAuthorization()
+        
+//        addNotifi()
+        
         
     }
     
@@ -95,5 +84,22 @@ class ViewController: UIViewController, UNUserNotificationCenterDelegate {
     func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
         completionHandler(.banner)
     }
+    
+    func addNotifi(){
+        // 알림 설정
+        UNUserNotificationCenter.current().delegate = self
+        
+        let content = UNMutableNotificationContent()
+        content.title = "물을 마시세요!"
+        content.body = "당신의 목은 이미 건조해질 수 있습니다. 지금 물을 마시세요!"
+        content.sound = UNNotificationSound.default
+        
+        // 3600 = 60분 60 = 1분 -> 초단위 임
+        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 60, repeats: true)
+
+        let request = UNNotificationRequest(identifier: "waterReminder", content: content, trigger: trigger)
+        UNUserNotificationCenter.current().add(request)
+    }
+    
 }
 
