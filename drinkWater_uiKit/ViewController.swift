@@ -14,21 +14,21 @@ class ViewController: UIViewController, UNUserNotificationCenterDelegate {
     @IBOutlet weak var addButton: UIButton!
     @IBOutlet weak var reminderLabel: UILabel!
     
-    var waterIntake = 0
-    
+    var waterIntake : Double = 0.0
+    var userSettingLitter : Double = UserDefaults.standard.double(forKey: "userSettingLitter")
     override func viewDidLoad() {
         super.viewDidLoad()
         
         // UI 설정
         view.backgroundColor = .white
         
-        waterLabel.text = "0 oz"
+        waterLabel.text = "오늘 마신 물의 양은?\n\(waterIntake)L"
         waterLabel.font = UIFont.systemFont(ofSize: 48)
         waterLabel.textAlignment = .center
         waterLabel.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(waterLabel)
         
-        addButton.setTitle("8 oz 추가", for: .normal)
+        addButton.setTitle("물 마시기", for: .normal)
         addButton.backgroundColor = .systemBlue
         addButton.setTitleColor(.white, for: .normal)
         addButton.addTarget(self, action: #selector(addWater), for: .touchUpInside)
@@ -65,8 +65,8 @@ class ViewController: UIViewController, UNUserNotificationCenterDelegate {
     }
     
     @objc func addWater() {
-        waterIntake += 8
-        waterLabel.text = "\(waterIntake) oz"
+        waterIntake += userSettingLitter
+        waterLabel.text = "오늘 마신 물의 양은?\n\(waterIntake) oz"
     }
     
     // 알림 권한 요청
@@ -91,7 +91,7 @@ class ViewController: UIViewController, UNUserNotificationCenterDelegate {
         
         let content = UNMutableNotificationContent()
         content.title = "물을 마시세요!"
-        content.body = "당신의 목은 이미 건조해질 수 있습니다. 지금 물을 마시세요!"
+        content.body = "물 마실 시간이에요!"
         content.sound = UNNotificationSound.default
         
         // 3600 = 60분 60 = 1분 -> 초단위 임
