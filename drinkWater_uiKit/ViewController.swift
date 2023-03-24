@@ -94,6 +94,14 @@ class ViewController: UIViewController, UNUserNotificationCenterDelegate {
         content.body = "물 마실 시간이에요!"
         content.sound = UNNotificationSound.default
         
+        // 매일 오전 10시에 알림울리게 설정.
+//        var dateComponents = DateComponents()
+//        dateComponents.hour = 10
+//        dateComponents.minute = 0
+//        dateComponents.second = 0
+//        let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: true)
+
+        
         // 3600 = 60분 60 = 1분 -> 초단위 임
         let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 60, repeats: true)
 
